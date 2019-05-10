@@ -17,6 +17,7 @@ import re ## I used 're' here to list all possible matches
 data = json.load(open("data.json"))
 
 word = input("Give Word: ")
+word = word.lower()
 
 def my_dictionary(w):
     w = w.lower()
