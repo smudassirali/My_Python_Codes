@@ -19,6 +19,7 @@ data = json.load(open("data.json"))
 word = input("Give Word: ")
 word = word.lower()
 
+
 def my_dictionary(w):
     w = w.lower()
     if w in data:
@@ -38,8 +39,8 @@ def my_dictionary(w):
         return "Please give correct word."
 
 ## Here taking an input word to match suggestions
-        
-regex = re.compile(word)
+
+regex = re.compile(get_close_matches(word,data.keys())[0])
 matches = [string for string in data if re.match(regex, string)]
 
 ## Giving option to user if they need any suggestion
@@ -79,4 +80,4 @@ else:
             print(item)
     else:
         print(output)
-   
+    
