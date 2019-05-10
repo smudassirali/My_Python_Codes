@@ -63,12 +63,7 @@ if ask_suggestion == 'Y':
         else:
             print(output)
     else:
-        output = my_dictionary(sw)
-        if type(output) == list:
-            for item in output:
-                print(item)
-        else:
-            print(output)
+        print(output)
 
 ## If user input 'N' for suggestion it will not give words suggestion list.
 else:
@@ -78,16 +73,3 @@ else:
             print(item)
     else:
         print(output)
-    
-
-
-
-
-
-#output = my_dictionary(sw)
-
-#if type(output) == list:
-#    for item in output:
-#        print(item)
-#else:
-#    print(output)
