@@ -14,12 +14,13 @@ import json  ## Used to read/write JSON file
 from difflib import get_close_matches ## To list words in case of any mistake in spelling
 import re ## I used 're' here to list all possible matches
 
+## This file contains all data for dictionary. Data here is in DICTIONARY type.
 data = json.load(open("data.json"))
 
 word = input("Give Word: ")
 word = word.lower()
 
-
+## This is a function for dictionary application.
 def my_dictionary(w):
     w = w.lower()
     if w in data:
@@ -47,9 +48,9 @@ matches = [string for string in data if re.match(regex, string)]
 
 ask_suggestion = input("Would you like suggestions matching your given word. Press 'Y' for yes, or 'N' for no: ")
 
-## The block which will work based upon the response given by user in above part.
+## The following block will work based upon the response given by user in above part.
 
-## If user input 'Y' for suggestion it will give words suggestion list, and ask user to give input from suggestion list.
+   ## If user input 'Y' for suggestion it will give words suggestion list, and ask user to give input from suggestion list.
 if ask_suggestion == 'Y':
     if type(matches) == list:
         for item in matches:
@@ -72,7 +73,7 @@ if ask_suggestion == 'Y':
         else:
             print(output)
 
-## If user input 'N' for suggestion it will not give words suggestion list.
+   ## If user input 'N' for suggestion it will not give words suggestion list.
 else:
     output = my_dictionary(sw)
     if type(output) == list:
